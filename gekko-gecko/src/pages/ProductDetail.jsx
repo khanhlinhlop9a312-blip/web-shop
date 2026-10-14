@@ -176,7 +176,10 @@ export default function ProductDetail() {
                   onMouseLeave={e => e.currentTarget.style.borderColor = 'var(--black)'}
                 >
                   <div style={{ height: 200, overflow: 'hidden' }}>
-                    <img src={p.image} alt={p.name} style={{ width: '100%', height: '100%', objectFit: 'cover', transition: 'transform 0.3s' }}
+                    <img
+                      src={p.image}
+                      alt={p.name}
+                      style={{ width: '100%', height: '100%', objectFit: 'cover', transition: 'transform 0.3s' }}
                       onMouseEnter={e => e.target.style.transform = 'scale(1.05)'}
                       onMouseLeave={e => e.target.style.transform = 'scale(1)'}
                     />
@@ -194,7 +197,7 @@ export default function ProductDetail() {
 
       <style>{`
         @media (max-width: 768px) {
-          .product-detail-grid { grid-template-columns: 1fr !important; }
+          .detail-grid { grid-template-columns: 1fr !important; }
         }
       `}</style>
     </main>

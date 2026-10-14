@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
 const faqs = [
-  { q: 'How does selling work?', a: 'Fill out the Register Product form on our Sell page with photos and details. Our team reviews your submission and contacts you within 48 hours with next steps. We handle listing and sales on your behalf.' },
-  { q: 'How do I buy an item?', a: 'Browse our categories, click on an item you love, and hit BUY NOW. You\'ll be guided through checkout. We accept major payment methods and your purchase is protected.' },
+  { q: 'How does selling work?', a: "Fill out the Register Product form on our Sell page with photos and details. Our team reviews your submission and contacts you within 48 hours with next steps. We handle listing and sales on your behalf." },
+  { q: 'How do I buy an item?', a: "Browse our categories, click on an item you love, and hit BUY NOW. You'll be guided through checkout. We accept major payment methods and your purchase is protected." },
   { q: 'Can I return an item?', a: 'We accept returns within 7 days if the item significantly differs from its listed condition. Please contact us with photos and your order number to initiate a return.' },
   { q: 'How do I know the condition of an item?', a: 'Every item is graded by our team: Like New (barely worn), Very Good (light use), or Good (visible wear with character). We include close-up photos of any notable wear.' },
-  { q: 'How does shipping work?', a: 'We ship within 3–5 business days after purchase. You\'ll receive a tracking number by email. Shipping costs are calculated at checkout based on your location.' },
+  { q: 'How does shipping work?', a: "We ship within 3–5 business days after purchase. You'll receive a tracking number by email. Shipping costs are calculated at checkout based on your location." },
   { q: 'What categories do you accept for resale?', a: 'We accept clothes, shoes, bags, and accessories in Good condition or better. All items must be clean and ready to wear.' },
 ];
 

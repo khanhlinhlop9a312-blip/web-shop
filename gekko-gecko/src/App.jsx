@@ -23,7 +23,7 @@ export default function App() {
         <Route path="/" element={<Layout><Home /></Layout>} />
         <Route path="/sell" element={<Layout><Sell /></Layout>} />
         <Route path="/product/:id" element={<Layout><ProductDetail /></Layout>} />
-        {['clothes','shoes','bags','accessories'].map(cat => (
+        {['clothes', 'shoes', 'bags', 'accessories'].map(cat => (
           <Route key={cat} path={`/${cat}`} element={<Layout><CategoryPage key={cat} /></Layout>} />
         ))}
         <Route path="*" element={<Navigate to="/" replace />} />

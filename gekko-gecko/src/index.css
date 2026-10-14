@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&display=swap');
-@import 'tailwindcss';
 
 :root {
   --burgundy: #650019;
@@ -32,12 +31,10 @@ body {
   letter-spacing: 0.01em;
 }
 
-/* Smooth transitions */
 a { text-decoration: none; color: inherit; }
 button { cursor: pointer; font-family: inherit; }
 img { max-width: 100%; display: block; }
 
-/* Responsive global overrides */
 @media (max-width: 768px) {
   .hero-grid { grid-template-columns: 1fr !important; }
   .promo-grid { grid-template-columns: 1fr !important; }
@@ -48,13 +45,11 @@ img { max-width: 100%; display: block; }
   .sell-form-grid { grid-template-columns: 1fr !important; }
 }
 
-/* Focus styles */
 button:focus-visible, a:focus-visible {
   outline: 2px solid var(--burgundy);
   outline-offset: 2px;
 }
 
-/* Accordion */
 .accordion-content {
   max-height: 0;
   overflow: hidden;
@@ -64,7 +59,6 @@ button:focus-visible, a:focus-visible {
   max-height: 500px;
 }
 
-/* Product card hover */
 .product-card:hover .product-img img {
   transform: scale(1.05);
 }

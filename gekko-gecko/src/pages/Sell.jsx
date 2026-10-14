@@ -148,7 +148,7 @@ export default function Sell() {
                   </div>
 
                   <div style={{ marginBottom: 16 }}>
-                    <label htmlFor="description" style={labelStyle}>PRODUCT'S DESCRIPTION/DETAILS</label>
+                    <label htmlFor="description" style={labelStyle}>{"PRODUCT'S DESCRIPTION/DETAILS"}</label>
                     <textarea
                       id="description"
                       value={form.description}
@@ -193,8 +193,7 @@ export default function Sell() {
 
       <style>{`
         @media (max-width: 768px) {
-          .sell-grid { grid-template-columns: 1fr !important; }
-          .sell-left { min-height: 200px !important; }
+          .sell-form-grid { grid-template-columns: 1fr !important; }
         }
       `}</style>
     </main>

@@ -190,11 +190,15 @@ export default function CategoryPage() {
 
           {/* Mobile sidebar overlay */}
           {sidebarOpen && (
-            <div style={{
-              position: 'fixed', inset: 0, zIndex: 200, background: 'rgba(0,0,0,0.4)',
-              display: 'flex'
-            }} onClick={() => setSidebarOpen(false)}>
-              <div style={{ background: 'var(--white)', padding: 24, width: 280, overflowY: 'auto' }}
+            <div
+              style={{
+                position: 'fixed', inset: 0, zIndex: 200, background: 'rgba(0,0,0,0.4)',
+                display: 'flex'
+              }}
+              onClick={() => setSidebarOpen(false)}
+            >
+              <div
+                style={{ background: 'var(--white)', padding: 24, width: 280, overflowY: 'auto' }}
                 onClick={e => e.stopPropagation()}
               >
                 <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 16 }}>

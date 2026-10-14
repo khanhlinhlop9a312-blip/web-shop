@@ -48,7 +48,7 @@ export default function Header() {
       </div>
 
       {/* Divider */}
-      <div style={{ borderTop: '1px solid rgba(255,255,255,0.3)', marginX: 0 }} />
+      <div style={{ borderTop: '1px solid rgba(255,255,255,0.3)' }} />
 
       {/* Nav row */}
       <div style={{ padding: '0 32px', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>

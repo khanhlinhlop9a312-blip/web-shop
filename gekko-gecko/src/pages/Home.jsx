@@ -3,17 +3,17 @@ import FAQ from '../components/FAQ';
 import SocialMediaSection from '../components/SocialMediaSection';
 
 const categories = [
-  { name: 'CLOTHES', path: '/clothes', emoji: '👕', img: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=200&q=80' },
-  { name: 'SHOES', path: '/shoes', emoji: '👟', img: 'https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=200&q=80' },
-  { name: 'BAGS', path: '/bags', emoji: '👜', img: 'https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=200&q=80' },
-  { name: 'ACCESSORIES', path: '/accessories', emoji: '💍', img: 'https://images.unsplash.com/photo-1603561591411-07134e71a2a9?w=200&q=80' },
+  { name: 'CLOTHES', path: '/clothes', img: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=200&q=80' },
+  { name: 'SHOES', path: '/shoes', img: 'https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=200&q=80' },
+  { name: 'BAGS', path: '/bags', img: 'https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=200&q=80' },
+  { name: 'ACCESSORIES', path: '/accessories', img: 'https://images.unsplash.com/photo-1603561591411-07134e71a2a9?w=200&q=80' },
 ];
 
 const communityPosts = [
   { image: 'https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=400&q=80', title: 'Style Guide: 5 Ways to Wear Thrifted Denim', tag: 'STYLING' },
   { image: 'https://images.unsplash.com/photo-1445205170230-053b83016050?w=400&q=80', title: 'Why Second-Hand Shopping is the Future', tag: 'SUSTAINABILITY' },
   { image: 'https://images.unsplash.com/photo-1487222477894-8943e31ef7b2?w=400&q=80', title: 'Community Spotlight: @gekko.girls', tag: 'COMMUNITY' },
-  { image: 'https://images.unsplash.com/photo-1525507119028-ed4c629a60a3?w=400&q=80', title: 'Rare Finds This Week — Don\'t Miss Out!', tag: 'PICKS' },
+  { image: 'https://images.unsplash.com/photo-1525507119028-ed4c629a60a3?w=400&q=80', title: "Rare Finds This Week — Don't Miss Out!", tag: 'PICKS' },
 ];
 
 export default function Home() {
@@ -111,12 +111,13 @@ export default function Home() {
                   display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 14
                 }}
               >
-                <div style={{
-                  width: 120, height: 120, borderRadius: '50%',
-                  border: '2.5px solid var(--burgundy)',
-                  overflow: 'hidden', transition: 'border-width 0.2s, transform 0.2s',
-                  background: 'var(--white)'
-                }}
+                <div
+                  style={{
+                    width: 120, height: 120, borderRadius: '50%',
+                    border: '2.5px solid var(--burgundy)',
+                    overflow: 'hidden', transition: 'border-width 0.2s, transform 0.2s',
+                    background: 'var(--white)'
+                  }}
                   onMouseEnter={e => { e.currentTarget.style.transform = 'scale(1.06)'; e.currentTarget.style.borderWidth = '4px'; }}
                   onMouseLeave={e => { e.currentTarget.style.transform = 'scale(1)'; e.currentTarget.style.borderWidth = '2.5px'; }}
                 >
@@ -149,7 +150,10 @@ export default function Home() {
               style={{ position: 'relative', height: 400, overflow: 'hidden', border: '1px solid var(--black)', cursor: 'pointer' }}
               onClick={() => navigate(block.path)}
             >
-              <img src={block.img} alt={block.title} style={{ width: '100%', height: '100%', objectFit: 'cover', transition: 'transform 0.4s' }}
+              <img
+                src={block.img}
+                alt={block.title}
+                style={{ width: '100%', height: '100%', objectFit: 'cover', transition: 'transform 0.4s' }}
                 onMouseEnter={e => e.target.style.transform = 'scale(1.04)'}
                 onMouseLeave={e => e.target.style.transform = 'scale(1)'}
               />
@@ -213,12 +217,17 @@ export default function Home() {
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: 20 }}>
             {communityPosts.map((post, i) => (
-              <div key={i} style={{ border: '1.5px solid var(--black)', overflow: 'hidden', cursor: 'pointer' }}
+              <div
+                key={i}
+                style={{ border: '1.5px solid var(--black)', overflow: 'hidden', cursor: 'pointer' }}
                 onMouseEnter={e => e.currentTarget.style.borderColor = 'var(--burgundy)'}
                 onMouseLeave={e => e.currentTarget.style.borderColor = 'var(--black)'}
               >
                 <div style={{ height: 200, overflow: 'hidden' }}>
-                  <img src={post.image} alt={post.title} style={{ width: '100%', height: '100%', objectFit: 'cover', transition: 'transform 0.3s' }}
+                  <img
+                    src={post.image}
+                    alt={post.title}
+                    style={{ width: '100%', height: '100%', objectFit: 'cover', transition: 'transform 0.3s' }}
                     onMouseEnter={e => e.target.style.transform = 'scale(1.05)'}
                     onMouseLeave={e => e.target.style.transform = 'scale(1)'}
                   />
