@@ -48,32 +48,42 @@ export default function Sell() {
   return (
     <main style={{ background: 'var(--baby-blue)', minHeight: '90vh', padding: '80px 32px' }}>
       <div style={{ maxWidth: 960, margin: '0 auto' }}>
-        {/* Page title */}
-        <h1 className="font-display" style={{
-          fontSize: 'clamp(2.5rem, 6vw, 5rem)', color: 'var(--burgundy)',
-          margin: '0 0 48px', letterSpacing: '0.02em'
-        }}>
-          ĐĂNG KÍ SẢN PHẨM
-        </h1>
-
         <div className="sell-form-grid" style={{
           display: 'grid', gridTemplateColumns: 'minmax(0,1fr) minmax(0,1fr)', gap: 0,
           border: '2px solid var(--black)', background: 'var(--white)',
           overflow: 'hidden'
         }}>
           {/* Left: image + brand */}
-          <div style={{ background: 'var(--burgundy)', position: 'relative', minHeight: 500 }}>
-            <div style={{ padding: '32px', borderBottom: '1px solid rgba(255,255,255,0.2)' }}>
-              <span className="font-display" style={{ fontSize: 28, color: 'var(--white)', display: 'block' }}>GEKKO GECKO</span>
-              <div style={{ width: 44, height: 44, borderRadius: '50%', background: 'var(--baby-blue)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginTop: 8 }}>
-                <span style={{ fontSize: 6, fontWeight: 700, color: 'var(--burgundy)', textAlign: 'center', lineHeight: 1.2 }}>OUR<br />LOGO</span>
+          <div style={{ background: 'var(--burgundy)', position: 'relative', minHeight: 500, display: 'flex', flexDirection: 'column' }}>
+            <div style={{
+              padding: '24px 32px',
+              borderBottom: '1px solid rgba(255,255,255,0.2)',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'space-between',
+              background: 'var(--burgundy)',
+              position: 'relative',
+              zIndex: 2
+            }}>
+              <h1 className="font-display" style={{ fontSize: 28, color: 'var(--white)', margin: 0, letterSpacing: '0.02em' }}>
+                GEKKO GECKO
+              </h1>
+              <div style={{
+                width: 44, height: 44, borderRadius: '50%', overflow: 'hidden',
+                border: '1.5px solid var(--white)', background: 'var(--burgundy)', flexShrink: 0
+              }}>
+                <img
+                  src="/logo.png"
+                  alt="GEKKO GECKO Logo"
+                  style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+                />
               </div>
             </div>
-            <div style={{ position: 'absolute', inset: 0, top: 110, overflow: 'hidden' }}>
+            <div style={{ flex: 1, position: 'relative', minHeight: 380, overflow: 'hidden' }}>
               <img
                 src="https://images.unsplash.com/photo-1558769132-cb1aea458c5e?w=600&q=85"
                 alt="Folded clothes for resale"
-                style={{ width: '100%', height: '100%', objectFit: 'cover', opacity: 0.85 }}
+                style={{ width: '100%', height: '100%', objectFit: 'cover', opacity: 0.85, position: 'absolute', inset: 0 }}
               />
             </div>
           </div>

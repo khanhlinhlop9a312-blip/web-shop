@@ -30,25 +30,50 @@ export default function Header() {
   return (
     <header style={{ background: 'var(--burgundy)' }} role="banner">
       {/* Top row: logo + circle logo */}
-      <div style={{ padding: '16px 32px', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+      <div style={{
+        background: 'var(--baby-blue)',
+        padding: '16px 32px',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+        borderBottom: '2px solid var(--burgundy)'
+      }}>
         <Link to="/" style={{ textDecoration: 'none' }}>
-          <span className="font-display" style={{ fontSize: 'clamp(2rem, 5vw, 3.5rem)', color: 'var(--white)', letterSpacing: '0.02em', lineHeight: 1 }}>
+          <span className="font-display" style={{
+            fontSize: 'clamp(2.6rem, 7vw, 4.8rem)',
+            color: 'var(--burgundy)',
+            letterSpacing: '0.02em',
+            lineHeight: 1
+          }}>
             GEKKO GECKO
           </span>
         </Link>
-        <div style={{
-          width: 64, height: 64, borderRadius: '50%', background: 'var(--baby-blue)',
-          display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0,
-          border: '2px solid var(--white)'
-        }}>
-          <span style={{ fontSize: 8, fontWeight: 700, textAlign: 'center', color: 'var(--burgundy)', lineHeight: 1.2, padding: '0 4px' }}>
-            OUR<br />LOGO
-          </span>
-        </div>
+        <Link to="/" style={{ textDecoration: 'none' }} aria-label="GEKKO GECKO Home">
+          <div style={{
+            width: 'clamp(54px, 7vw, 76px)',
+            height: 'clamp(54px, 7vw, 76px)',
+            borderRadius: '50%',
+            overflow: 'hidden',
+            flexShrink: 0,
+            border: '1px solid var(--white)',
+            background: 'var(--white)',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            boxShadow: '0 2px 8px rgba(0,0,0,0.12)',
+            transition: 'transform 0.2s'
+          }}
+            onMouseEnter={e => e.currentTarget.style.transform = 'scale(1.06)'}
+            onMouseLeave={e => e.currentTarget.style.transform = 'scale(1)'}
+          >
+            <img
+              src="/logo.png"
+              alt="GEKKO GECKO Logo"
+              style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+            />
+          </div>
+        </Link>
       </div>
-
-      {/* Divider */}
-      <div style={{ borderTop: '1px solid rgba(255,255,255,0.3)' }} />
 
       {/* Nav row */}
       <div style={{ padding: '0 32px', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
@@ -86,17 +111,29 @@ export default function Header() {
             style={{ background: 'none', border: 'none', color: 'var(--white)', cursor: 'pointer', padding: 4 }}
           >
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-              <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+              <circle cx="11" cy="11" r="8" /><line x1="21" y1="21" x2="16.65" y2="16.65" />
             </svg>
           </button>
-          <a href="https://instagram.com" aria-label="Instagram" style={{ color: 'var(--white)' }}>
+          <a
+            href="https://www.instagram.com/gekkogecko.thrift/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Instagram"
+            style={{ color: 'var(--white)', display: 'flex', alignItems: 'center' }}
+          >
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-              <rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none"/>
+              <rect x="2" y="2" width="20" height="20" rx="5" /><circle cx="12" cy="12" r="4" /><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none" />
             </svg>
           </a>
-          <a href="https://facebook.com" aria-label="Facebook" style={{ color: 'var(--white)' }}>
+          <a
+            href="https://www.facebook.com/gekkogecko.store?locale=vi_VN"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Facebook"
+            style={{ color: 'var(--white)', display: 'flex', alignItems: 'center' }}
+          >
             <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+              <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
             </svg>
           </a>
           {/* Hamburger - mobile only */}
@@ -109,11 +146,11 @@ export default function Header() {
           >
             {menuOpen ? (
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+                <line x1="18" y1="6" x2="6" y2="18" /><line x1="6" y1="6" x2="18" y2="18" />
               </svg>
             ) : (
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
+                <line x1="3" y1="6" x2="21" y2="6" /><line x1="3" y1="12" x2="21" y2="12" /><line x1="3" y1="18" x2="21" y2="18" />
               </svg>
             )}
           </button>

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Oswald:wght@600;700&family=Inter:wght@400;500;600;700&display=swap');
 
 :root {
   --burgundy: #650019;
@@ -11,6 +11,10 @@
 
 * {
   box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 html, body {
@@ -27,8 +31,10 @@ body {
 }
 
 .font-display {
-  font-family: 'Anton', sans-serif;
-  letter-spacing: 0.01em;
+  font-family: 'Oswald', 'Anton', sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
 }
 
 a { text-decoration: none; color: inherit; }
@@ -43,6 +49,9 @@ img { max-width: 100%; display: block; }
   .detail-grid { grid-template-columns: 1fr !important; }
   .community-grid { grid-template-columns: 1fr !important; }
   .sell-form-grid { grid-template-columns: 1fr !important; }
+  .vibe-desc-desktop { display: none !important; }
+  .vibe-desc-mobile { display: block !important; }
+  .vibe-container h2 { white-space: normal !important; }
 }
 
 button:focus-visible, a:focus-visible {
