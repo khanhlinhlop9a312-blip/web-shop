@@ -70,12 +70,13 @@ export default function SocialMediaSection({ id }) {
               rel="noopener noreferrer"
               style={{
                 display: 'inline-flex', alignItems: 'center', gap: 8,
-                background: 'var(--white)', color: 'var(--burgundy)',
+                background: 'transparent', color: 'var(--white)',
+                border: '1.5px solid var(--white)',
                 padding: '10px 18px', fontSize: 11, fontWeight: 700,
                 letterSpacing: '0.1em', transition: 'all 0.2s', textDecoration: 'none'
               }}
-              onMouseEnter={e => e.currentTarget.style.background = 'var(--baby-blue)'}
-              onMouseLeave={e => e.currentTarget.style.background = 'var(--white)'}
+              onMouseEnter={e => { e.currentTarget.style.background = 'var(--white)'; e.currentTarget.style.color = 'var(--burgundy)'; }}
+              onMouseLeave={e => { e.currentTarget.style.background = 'transparent'; e.currentTarget.style.color = 'var(--white)'; }}
             >
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
                 <rect x="2" y="2" width="20" height="20" rx="5" /><circle cx="12" cy="12" r="4" /><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none" />
@@ -84,6 +85,25 @@ export default function SocialMediaSection({ id }) {
             </a>
             <a
               href="https://www.facebook.com/gekkogecko.store?locale=vi_VN"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                display: 'inline-flex', alignItems: 'center', gap: 8,
+                background: 'var(--white)', color: 'var(--burgundy)',
+                border: '1.5px solid var(--white)',
+                padding: '10px 18px', fontSize: 11, fontWeight: 700,
+                letterSpacing: '0.1em', transition: 'all 0.2s', textDecoration: 'none'
+              }}
+              onMouseEnter={e => e.currentTarget.style.background = 'var(--baby-blue)'}
+              onMouseLeave={e => e.currentTarget.style.background = 'var(--white)'}
+            >
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+              </svg>
+              gekkogecko.store
+            </a>
+            <a
+              href="https://www.tiktok.com/@gekkogecko.store"
               target="_blank"
               rel="noopener noreferrer"
               style={{
@@ -97,9 +117,9 @@ export default function SocialMediaSection({ id }) {
               onMouseLeave={e => { e.currentTarget.style.background = 'transparent'; e.currentTarget.style.color = 'var(--white)'; }}
             >
               <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+                <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 3 15.68 6.34 6.34 0 0 0 9.34 22a6.34 6.34 0 0 0 6.33-6.33V9.08a8.21 8.21 0 0 0 4.92 1.62V7.25a4.87 4.87 0 0 1-1-.56z" />
               </svg>
-              gekkogecko.store
+              @gekkogecko.store
             </a>
           </div>
         </div>
@@ -159,6 +179,13 @@ export default function SocialMediaSection({ id }) {
                         <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
                       </svg>
                       Facebook
+                    </>
+                  ) : post.platform === 'tiktok' ? (
+                    <>
+                      <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 3 15.68 6.34 6.34 0 0 0 9.34 22a6.34 6.34 0 0 0 6.33-6.33V9.08a8.21 8.21 0 0 0 4.92 1.62V7.25a4.87 4.87 0 0 1-1-.56z" />
+                      </svg>
+                      TikTok
                     </>
                   ) : (
                     <>

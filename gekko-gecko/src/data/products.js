@@ -36,8 +36,8 @@ export const products = [
     id: 5, name: "Oversized Hoodie", category: "clothes", type: "Hoodie",
     material: "Cotton", season: "Autumn", color: "Grey", price: 20,
     condition: "Good", size: "XL",
-    image: "https://images.unsplash.com/photo-1556821840-3a63f15732ce?w=600&q=80",
-    description: "Super comfy oversized grey hoodie. Perfect for lounging or casual street style.",
+    image: "/oversized-hoodie.jpg",
+    description: "Super comfy oversized hoodie. Perfect for lounging or casual street style.",
     id_created: 5
   },
   {
@@ -76,7 +76,7 @@ export const products = [
     id: 10, name: "Cream Linen Blazer", category: "clothes", type: "Coat",
     material: "Linen", season: "Spring", color: "Beige", price: 50,
     condition: "Very Good", size: "S",
-    image: "https://images.unsplash.com/photo-1594938298603-c8148c4b4f50?w=600&q=80",
+    image: "/cream-linen-blazer.jpg",
     description: "Relaxed linen blazer in cream. Effortlessly chic for warmer weather.",
     id_created: 10
   },
@@ -102,7 +102,7 @@ export const products = [
     id: 13, name: "Black Ballet Flats", category: "shoes", type: "Ballet shoes",
     material: "Leather", season: "Spring", color: "Black", price: 28,
     condition: "Like New", size: "38",
-    image: "https://images.unsplash.com/photo-1590548784585-643d2b9f2925?w=600&q=80",
+    image: "/black-ballet-flats.jpg",
     description: "Elegant black leather ballet flats. Classic silhouette, barely worn.",
     id_created: 13
   },
@@ -126,7 +126,7 @@ export const products = [
     id: 16, name: "Black Lace-Up Boots", category: "shoes", type: "Oxford",
     material: "Leather", season: "Winter", color: "Black", price: 55,
     condition: "Very Good", size: "39",
-    image: "https://images.unsplash.com/photo-1608256246200-53e635b5b65f?w=600&q=80",
+    image: "/black-lace-up-boots.jpg",
     description: "Chunky black lace-up boots with thick sole. Edgy and durable.",
     id_created: 16
   },
@@ -150,7 +150,7 @@ export const products = [
     id: 19, name: "Platform Sandals", category: "shoes", type: "Sandal",
     material: "Synthetic", season: "Summer", color: "Black", price: 30,
     condition: "Good", size: "38",
-    image: "https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=600&q=80",
+    image: "/platform-sandals.jpg",
     description: "Black platform sandals with chunky sole. Great for festival season.",
     id_created: 19
   },
@@ -168,7 +168,7 @@ export const products = [
     id: 21, name: "Brown Shoulder Bag", category: "bags", type: "Handbag",
     material: "Leather", season: "Autumn", color: "Brown", price: 55,
     condition: "Very Good", size: "One Size",
-    image: "https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=600&q=80",
+    image: "/brown-shoulder-bag.jpg",
     description: "Structured brown leather shoulder bag with gold hardware. Classic and functional.",
     id_created: 21
   },
@@ -176,7 +176,7 @@ export const products = [
     id: 22, name: "Black Mini Bag", category: "bags", type: "Clutch",
     material: "Leather", season: "Summer", color: "Black", price: 35,
     condition: "Like New", size: "One Size",
-    image: "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=600&q=80",
+    image: "/black-mini-bag.jpg",
     description: "Minimal black mini crossbody bag. Perfect size for essentials.",
     id_created: 22
   },
@@ -184,7 +184,7 @@ export const products = [
     id: 23, name: "Canvas Tote Bag", category: "bags", type: "Tote",
     material: "Canvas", season: "Summer", color: "Beige", price: 18,
     condition: "Good", size: "One Size",
-    image: "https://images.unsplash.com/photo-1544816565-aa8c1166648f?w=600&q=80",
+    image: "/canvas-tote-bag.jpg",
     description: "Large canvas tote bag with interior pocket. Practical and sustainable.",
     id_created: 23
   },
@@ -192,23 +192,23 @@ export const products = [
     id: 24, name: "Vintage Leather Handbag", category: "bags", type: "Handbag",
     material: "Leather", season: "Winter", color: "Brown", price: 70,
     condition: "Good", size: "One Size",
-    image: "https://images.unsplash.com/photo-1566150905458-1bf1fc113f0d?w=600&q=80",
+    image: "/vintage-leather-handbag.jpg",
     description: "Vintage structured leather handbag with brass clasp. Rich patina and unique character.",
     id_created: 24
   },
   {
-    id: 25, name: "Pink Quilted Bag", category: "bags", type: "Clutch",
-    material: "Synthetic", season: "Spring", color: "Pink", price: 40,
+    id: 25, name: "Pink Quilted Bag", category: "bags", type: "Tote",
+    material: "Cotton", season: "Spring", color: "Pink", price: 40,
     condition: "Like New", size: "One Size",
-    image: "https://images.unsplash.com/photo-1601924994987-69e26d50dc26?w=600&q=80",
-    description: "Chic pink quilted crossbody with chain strap. Y2K inspired.",
+    image: "/pink-quilted-bag.jpg",
+    description: "Chic pink quilted tote bag with colorful beachy prints. Perfect summer vibe.",
     id_created: 25
   },
   {
     id: 26, name: "Black Backpack", category: "bags", type: "Backpack",
     material: "Nylon", season: "Autumn", color: "Black", price: 38,
     condition: "Very Good", size: "One Size",
-    image: "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=600&q=80",
+    image: "/black-backpack.jpg",
     description: "Sleek black nylon backpack with multiple compartments. Urban and functional.",
     id_created: 26
   },
@@ -216,7 +216,7 @@ export const products = [
     id: 27, name: "Woven Straw Tote", category: "bags", type: "Tote",
     material: "Straw", season: "Summer", color: "Beige", price: 25,
     condition: "Good", size: "One Size",
-    image: "https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=600&q=80",
+    image: "/woven-straw-tote.jpg",
     description: "Artisan woven straw tote. Perfect beach or market bag.",
     id_created: 27
   },
@@ -224,7 +224,7 @@ export const products = [
     id: 28, name: "White Leather Tote", category: "bags", type: "Tote",
     material: "Leather", season: "Spring", color: "White", price: 60,
     condition: "Very Good", size: "One Size",
-    image: "https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=600&q=80",
+    image: "/white-leather-tote.jpg",
     description: "Clean white leather tote with minimal branding. Smart and professional.",
     id_created: 28
   },
@@ -232,7 +232,7 @@ export const products = [
     id: 29, name: "Burgundy Clutch", category: "bags", type: "Clutch",
     material: "Leather", season: "Winter", color: "Red", price: 32,
     condition: "Like New", size: "One Size",
-    image: "https://images.unsplash.com/photo-1566150905458-1bf1fc113f0d?w=600&q=80",
+    image: "/burgundy-clutch.jpg",
     description: "Elegant burgundy leather envelope clutch. Perfect for evenings out.",
     id_created: 29
   },
@@ -240,7 +240,7 @@ export const products = [
     id: 30, name: "Plaid Mini Backpack", category: "bags", type: "Backpack",
     material: "Cotton", season: "Autumn", color: "Multi", price: 22,
     condition: "Good", size: "One Size",
-    image: "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=600&q=80",
+    image: "/plaid-mini-backpack.jpg",
     description: "Cute plaid mini backpack with adjustable straps. Retro school vibes.",
     id_created: 30
   },
