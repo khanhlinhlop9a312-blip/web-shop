@@ -3,10 +3,10 @@ import FAQ from '../components/FAQ';
 import SocialMediaSection from '../components/SocialMediaSection';
 
 const categories = [
-  { name: 'CLOTHES', path: '/clothes', img: 'https://images.unsplash.com/photo-1523381210434-271e8be1f52b?w=400&q=80' },
-  { name: 'SHOES', path: '/shoes', img: 'https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=200&q=80' },
-  { name: 'BAGS', path: '/bags', img: 'https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=200&q=80' },
-  { name: 'ACCESSORIES', path: '/accessories', img: 'https://images.unsplash.com/photo-1603561591411-07134e71a2a9?w=200&q=80' },
+  { name: 'QUẦN ÁO', path: '/clothes', img: '/cat-clothes.jpg', pos: 'center 40%' },
+  { name: 'GIÀY DÉP', path: '/shoes', img: '/cat-shoes.jpg', pos: 'center' },
+  { name: 'TÚI XÁCH', path: '/bags', img: '/cat-bags.jpg', pos: 'center' },
+  { name: 'PHỤ KIỆN', path: '/accessories', img: '/cat-accessories.jpg', pos: 'center' },
 ];
 
 export default function Home() {
@@ -64,7 +64,7 @@ export default function Home() {
                   onMouseEnter={e => e.currentTarget.style.background = 'var(--baby-blue)'}
                   onMouseLeave={e => e.currentTarget.style.background = 'var(--white)'}
                 >
-                  SELL YOUR ITEMS
+                  GỬI BÁN ĐỒ
                 </button>
                 <button
                   onClick={() => navigate('/clothes')}
@@ -74,7 +74,7 @@ export default function Home() {
                     fontSize: 12, fontWeight: 700, letterSpacing: '0.12em', cursor: 'pointer'
                   }}
                 >
-                  SHOP NOW
+                  MUA SẮM NGAY
                 </button>
               </div>
             </div>
@@ -125,7 +125,7 @@ export default function Home() {
             fontSize: 'clamp(2.5rem, 5vw, 5rem)', color: 'var(--burgundy)',
             margin: '0 0 56px', lineHeight: 0.95, letterSpacing: '0.01em'
           }}>
-            SHOP BY CATEGORY
+            DANH MỤC SẢN PHẨM
           </h2>
 
           <div style={{ display: 'flex', justifyContent: 'center', gap: 40, flexWrap: 'wrap' }}>
@@ -148,7 +148,7 @@ export default function Home() {
                   onMouseEnter={e => { e.currentTarget.style.transform = 'scale(1.06)'; e.currentTarget.style.borderWidth = '4px'; }}
                   onMouseLeave={e => { e.currentTarget.style.transform = 'scale(1)'; e.currentTarget.style.borderWidth = '2.5px'; }}
                 >
-                  <img src={cat.img} alt={cat.name} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                  <img src={cat.img} alt={cat.name} style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: cat.pos || 'center' }} />
                 </div>
                 <span style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.15em', color: 'var(--burgundy)' }}>
                   {cat.name}
@@ -165,12 +165,12 @@ export default function Home() {
           {[
             {
               img: '/shop-online.jpg',
-              title: 'shop online.', sub: 'Discover hundreds of pre-loved pieces.', cta: 'GO TO SHOP', path: '/clothes',
+              title: 'mua sắm online.', sub: 'Khám phá hàng trăm món đồ pre-loved độc đáo.', cta: 'XEM CỬA HÀNG', path: '/clothes',
               objectPosition: 'center 20%'
             },
             {
               img: '/resell-items.jpg',
-              title: 'resell items.', sub: 'Give your clothes a new life.', cta: 'SEND PHOTOS FOR REVIEW', path: '/sell',
+              title: 'gửi bán đồ cũ.', sub: 'Trao cho quần áo của bạn một vòng đời mới.', cta: 'GỬI ẢNH ĐỊNH GIÁ', path: '/sell',
               objectPosition: 'center 45%'
             }
           ].map((block, i) => (
@@ -217,7 +217,7 @@ export default function Home() {
               margin: '0 0 16px', lineHeight: 0.95, letterSpacing: '0.01em',
               whiteSpace: 'nowrap'
             }}>
-              THE VIBE YOU UNLOCK
+              KHAI PHÁ CHẤT RIÊNG
             </h2>
 
             {/* Desktop: Exactly 2 lines aligned flush on both left and right edges with the title */}
@@ -229,10 +229,10 @@ export default function Home() {
               width: '100%'
             }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', width: '100%' }}>
-                <span>Break</span> <span>free</span> <span>from</span> <span>the</span> <span>familiar.</span> <span>Oversized</span> <span>tees,</span> <span>cargo</span> <span>pants,</span> <span>sneakers,</span> <span>and</span> <span>second-hand</span>
+                <span>Bước</span> <span>ra</span> <span>khỏi</span> <span>những</span> <span>gì</span> <span>quen</span> <span>thuộc.</span> <span>Áo</span> <span>thun</span> <span>oversized,</span> <span>quần</span> <span>túi</span> <span>hộp,</span> <span>sneakers</span> <span>cùng</span>
               </div>
               <div style={{ display: 'flex', justifyContent: 'space-between', width: '100%', marginTop: 2 }}>
-                <span>streetwear</span> <span>pieces</span> <span>come</span> <span>together</span> <span>to</span> <span>create</span> <span>a</span> <span>bolder,</span> <span>freer,</span> <span>and</span> <span>more</span> <span>energetic</span> <span>version</span> <span>of</span> <span>you.</span>
+                <span>những</span> <span>món</span> <span>đồ</span> <span>streetwear</span> <span>second-hand</span> <span>sẽ</span> <span>tạo</span> <span>nên</span> <span>một</span> <span>phiên</span> <span>bản</span> <span>táo</span> <span>bạo</span> <span>và</span> <span>tự</span> <span>do</span> <span>của</span> <span>bạn.</span>
               </div>
             </div>
 
@@ -246,7 +246,7 @@ export default function Home() {
               textJustify: 'inter-word',
               display: 'none'
             }}>
-              Break free from the familiar. Oversized tees, cargo pants, sneakers, and second-hand streetwear pieces come together to create a bolder, freer, and more energetic version&nbsp;of&nbsp;you.
+              Bước ra khỏi những gì quen thuộc. Áo thun oversized, quần túi hộp, sneakers cùng những món đồ streetwear second-hand sẽ kết hợp lại để tạo nên một phiên bản táo bạo hơn, tự do hơn và tràn đầy năng lượng hơn của chính bạn.
             </p>
           </div>
           <div className="nang-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 24 }}>
@@ -336,7 +336,7 @@ export default function Home() {
       <section id="community" style={{ background: 'var(--white)', padding: '88px 32px', borderBottom: '3px solid var(--burgundy)' }}>
         <div style={{ maxWidth: 1200, margin: '0 auto' }}>
           <div className="community-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1.15fr', gap: 56, alignItems: 'center' }}>
-            
+
             {/* Image side */}
             <div style={{
               border: '2px solid var(--black)',
@@ -474,7 +474,7 @@ export default function Home() {
 
               <div style={{ display: 'flex', gap: 14, flexWrap: 'wrap' }}>
                 <button
-                  onClick={() => navigate('/clothes')}
+                  onClick={() => navigate('/thay-mau')}
                   style={{
                     background: 'var(--burgundy)',
                     color: 'var(--white)',
@@ -489,25 +489,7 @@ export default function Home() {
                   onMouseEnter={e => e.currentTarget.style.background = '#8a0022'}
                   onMouseLeave={e => e.currentTarget.style.background = 'var(--burgundy)'}
                 >
-                  EXPLORE STREETWEAR →
-                </button>
-                <button
-                  onClick={() => navigate('/sell')}
-                  style={{
-                    background: 'transparent',
-                    color: 'var(--burgundy)',
-                    border: '1.5px solid var(--burgundy)',
-                    padding: '13px 24px',
-                    fontSize: 12,
-                    fontWeight: 700,
-                    letterSpacing: '0.12em',
-                    cursor: 'pointer',
-                    transition: 'all 0.2s'
-                  }}
-                  onMouseEnter={e => e.currentTarget.style.background = 'var(--pale-pink)'}
-                  onMouseLeave={e => e.currentTarget.style.background = 'transparent'}
-                >
-                  SELL YOUR PIECES
+                  ĐĂNG KÝ DỰ ÁN "THAY MÀU" →
                 </button>
               </div>
             </div>
@@ -529,11 +511,11 @@ export default function Home() {
               letterSpacing: '0.01em',
               whiteSpace: 'nowrap'
             }}>
-              HAVE ITEMS TO RESELL?
+              BẠN CÓ ĐỒ CŨ MUỐN BÁN LẠI?
             </h2>
             <p style={{ fontSize: 14, lineHeight: 1.8, color: 'var(--black)', margin: '0 0 24px', padding: 0, maxWidth: 395, textAlign: 'justify', textJustify: 'inter-word' }}>
-              You can send as many items as you have. To start, simply send one photo per item - that's enough.<br />
-              We'll guide you on the next step.
+              Bạn có thể gửi bao nhiêu món đồ tùy thích. Để bắt đầu, bạn chỉ cần gửi một bức ảnh cho mỗi món đồ - vậy là đủ.<br />
+              Tụi mình sẽ hướng dẫn bạn các bước tiếp theo.
             </p>
             <div style={{ display: 'flex', gap: 14, flexWrap: 'wrap', alignItems: 'center' }}>
               <button
@@ -554,7 +536,7 @@ export default function Home() {
                   e.currentTarget.style.borderColor = 'var(--burgundy)';
                 }}
               >
-                SEND PHOTOS FOR REVIEW
+                GỬI ẢNH ĐỊNH GIÁ
               </button>
               <a
                 href="#faqs"
@@ -578,7 +560,7 @@ export default function Home() {
                   e.currentTarget.style.color = 'var(--burgundy)';
                 }}
               >
-                LEARN MORE
+                TÌM HIỂU THÊM
               </a>
             </div>
           </div>

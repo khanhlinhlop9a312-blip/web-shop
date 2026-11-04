@@ -6,7 +6,7 @@
 
 export const ORDER_LINKS = {
   // 1. Link Google Form đặt hàng (dán link Google Form của bạn vào giữa 2 dấu ngoặc kép bên dưới)
-  googleForm: "https://docs.google.com/forms",
+  googleForm: "https://forms.gle/9wUuZkqSeipQFc9r5",
 
   // 2. Link Page Facebook của shop
   facebook: "https://www.facebook.com/gekkogecko.store/about?locale=vi_VN",

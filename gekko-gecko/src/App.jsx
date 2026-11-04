@@ -6,6 +6,7 @@ import Home from './pages/Home';
 import CategoryPage from './pages/CategoryPage';
 import ProductDetail from './pages/ProductDetail';
 import OrderOptions from './pages/OrderOptions';
+import ThayMau from './pages/ThayMau';
 import Sell from './pages/Sell';
 
 function ScrollToTop() {
@@ -35,6 +36,8 @@ export default function App() {
         <Route path="/sell" element={<Layout><Sell /></Layout>} />
         <Route path="/product/:id" element={<Layout><ProductDetail /></Layout>} />
         <Route path="/order/:id" element={<Layout><OrderOptions /></Layout>} />
+        <Route path="/thay-mau" element={<Layout><ThayMau /></Layout>} />
+        <Route path="/dang-ky-thay-mau" element={<Navigate to="/thay-mau" replace />} />
         {['clothes', 'shoes', 'bags', 'accessories'].map(cat => (
           <Route key={cat} path={`/${cat}`} element={<Layout><CategoryPage key={cat} /></Layout>} />
         ))}

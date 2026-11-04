@@ -8,10 +8,10 @@ import Pagination from '../components/Pagination';
 const ITEMS_PER_PAGE = 8;
 
 const categoryLabels = {
-  clothes: 'CLOTHES',
-  shoes: 'SHOES',
-  bags: 'BAGS',
-  accessories: 'ACCESSORIES'
+  clothes: 'QUẦN ÁO',
+  shoes: 'GIÀY DÉP',
+  bags: 'TÚI XÁCH',
+  accessories: 'PHỤ KIỆN'
 };
 
 export default function CategoryPage() {
@@ -97,7 +97,7 @@ export default function CategoryPage() {
               type="search"
               value={search}
               onChange={e => { setSearch(e.target.value); setPage(1); }}
-              placeholder="Search..."
+              placeholder="Tìm kiếm sản phẩm..."
               aria-label="Search products"
               style={{
                 width: '100%', padding: '10px 14px 10px 36px',
@@ -122,10 +122,10 @@ export default function CategoryPage() {
               fontWeight: 600, cursor: 'pointer', letterSpacing: '0.05em'
             }}
           >
-            <option value="recommended">RECOMMENDED</option>
-            <option value="price-asc">PRICE: LOW TO HIGH</option>
-            <option value="price-desc">PRICE: HIGH TO LOW</option>
-            <option value="newest">NEWEST</option>
+            <option value="recommended">GỢI Ý</option>
+            <option value="price-asc">GIÁ: THẤP ĐẾN CAO</option>
+            <option value="price-desc">GIÁ: CAO ĐẾN THẤP</option>
+            <option value="newest">MỚI NHẤT</option>
           </select>
 
           {/* Mobile filter toggle */}
@@ -138,7 +138,7 @@ export default function CategoryPage() {
               letterSpacing: '0.1em', cursor: 'pointer', display: 'none'
             }}
           >
-            FILTERS
+            BỘ LỌC
           </button>
         </div>
 
@@ -172,7 +172,7 @@ export default function CategoryPage() {
                 background: 'var(--white)', cursor: 'pointer', letterSpacing: '0.08em'
               }}
             >
-              ✕ CLEAR FILTERS
+              ✕ XÓA BỘ LỌC
             </button>
           )}
         </div>
@@ -202,7 +202,7 @@ export default function CategoryPage() {
                 onClick={e => e.stopPropagation()}
               >
                 <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 16 }}>
-                  <span style={{ fontWeight: 700, fontSize: 14 }}>FILTERS</span>
+                  <span style={{ fontWeight: 700, fontSize: 14 }}>BỘ LỌC</span>
                   <button onClick={() => setSidebarOpen(false)} style={{ background: 'none', border: 'none', cursor: 'pointer', fontSize: 18 }}>✕</button>
                 </div>
                 <FilterSidebar
@@ -218,7 +218,7 @@ export default function CategoryPage() {
           {/* Product grid */}
           <div style={{ flex: 1 }}>
             <p style={{ fontSize: 12, color: '#666', marginBottom: 16, fontWeight: 600 }}>
-              {filtered.length} ITEM{filtered.length !== 1 ? 'S' : ''}
+              {filtered.length} SẢN PHẨM
             </p>
 
             {paginated.length > 0 ? (
@@ -228,9 +228,9 @@ export default function CategoryPage() {
             ) : (
               <div style={{ textAlign: 'center', padding: '80px 32px' }}>
                 <p className="font-display" style={{ fontSize: 32, color: 'var(--burgundy)', marginBottom: 8 }}>
-                  NO ITEMS FOUND.
+                  KHÔNG TÌM THẤY SẢN PHẨM PHÙ HỢP.
                 </p>
-                <p style={{ fontSize: 14, color: '#666' }}>Try adjusting your filters or search query.</p>
+                <p style={{ fontSize: 14, color: '#666' }}>Hãy thử điều chỉnh bộ lọc hoặc từ khóa tìm kiếm của bạn.</p>
               </div>
             )}
 

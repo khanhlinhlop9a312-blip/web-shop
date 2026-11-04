@@ -49,7 +49,7 @@ export default function ProductCard({ product }) {
           onMouseEnter={e => e.currentTarget.style.background = '#8a0022'}
           onMouseLeave={e => e.currentTarget.style.background = 'var(--burgundy)'}
         >
-          VIEW ITEM
+          XEM CHI TIẾT
         </button>
       </div>
     </article>

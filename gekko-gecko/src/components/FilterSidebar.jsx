@@ -1,6 +1,13 @@
 import { useState } from 'react';
 import { categoryFilters } from '../data/products';
 
+const groupLabels = {
+  Type: 'PHÂN LOẠI',
+  Material: 'CHẤT LIỆU',
+  Season: 'MÙA',
+  Color: 'MÀU SẮC',
+};
+
 export default function FilterSidebar({ category, activeFilters, onFilterChange, onClearFilters }) {
   const [openGroups, setOpenGroups] = useState({ Type: true, Material: false, Season: false, Color: false });
   const filters = categoryFilters[category] || {};
@@ -22,14 +29,14 @@ export default function FilterSidebar({ category, activeFilters, onFilterChange,
     <aside style={{ minWidth: 200, maxWidth: 220 }} aria-label="Product filters">
       <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 16 }}>
         <h3 style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.15em', margin: 0 }}>
-          CATEGORY
+          BỘ LỌC
         </h3>
         {hasActiveFilters && (
           <button
             onClick={onClearFilters}
             style={{ fontSize: 10, color: 'var(--burgundy)', fontWeight: 700, background: 'none', border: 'none', cursor: 'pointer', letterSpacing: '0.05em' }}
           >
-            CLEAR
+            XÓA LỌC
           </button>
         )}
       </div>
@@ -45,7 +52,7 @@ export default function FilterSidebar({ category, activeFilters, onFilterChange,
               fontSize: 11, fontWeight: 700, letterSpacing: '0.1em', fontFamily: 'inherit'
             }}
           >
-            {group.toUpperCase()}
+            {groupLabels[group] || group.toUpperCase()}
             <svg
               width="12" height="12" viewBox="0 0 24 24" fill="none"
               stroke="currentColor" strokeWidth="2.5"

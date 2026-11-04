@@ -3,6 +3,13 @@ import { useParams, useSearchParams, useNavigate } from 'react-router-dom';
 import { products } from '../data/products';
 import { ORDER_LINKS } from '../config/orderLinks';
 
+const categoryNamesVN = {
+  clothes: 'QUẦN ÁO',
+  shoes: 'GIÀY DÉP',
+  bags: 'TÚI XÁCH',
+  accessories: 'PHỤ KIỆN'
+};
+
 export default function OrderOptions() {
   const { id } = useParams();
   const [searchParams] = useSearchParams();
@@ -70,7 +77,7 @@ export default function OrderOptions() {
             onClick={() => navigate(`/${product.category}`)}
             style={{ background: 'none', border: 'none', cursor: 'pointer', color: 'var(--burgundy)', fontWeight: 'inherit', letterSpacing: 'inherit', padding: 0 }}
           >
-            {product.category.toUpperCase()}
+            {categoryNamesVN[product.category] || product.category.toUpperCase()}
           </button>
           <span style={{ color: '#999' }}>/</span>
           <button
@@ -418,7 +425,7 @@ export default function OrderOptions() {
                     {product.name}
                   </h3>
                   <p style={{ fontSize: 12, color: '#666', margin: '0 0 6px' }}>
-                    {product.category.toUpperCase()} · {product.type}
+                    {(categoryNamesVN[product.category] || product.category).toUpperCase()} · {product.type}
                   </p>
                   <p style={{ fontSize: 18, fontWeight: 800, color: 'var(--burgundy)', margin: 0, fontFamily: 'Anton, sans-serif' }}>
                     ${product.price}
@@ -436,15 +443,15 @@ export default function OrderOptions() {
                 fontSize: 12
               }}>
                 <div style={{ padding: '8px 10px', borderRight: '1px solid var(--black)', borderBottom: '1px solid var(--black)', background: '#fafafa' }}>
-                  <span style={{ color: '#888', fontSize: 10, display: 'block', fontWeight: 600 }}>SIZE</span>
+                  <span style={{ color: '#888', fontSize: 10, display: 'block', fontWeight: 600 }}>KÍCH THƯỚC</span>
                   <strong>{product.size || 'N/A'}</strong>
                 </div>
                 <div style={{ padding: '8px 10px', borderBottom: '1px solid var(--black)', background: '#fafafa' }}>
-                  <span style={{ color: '#888', fontSize: 10, display: 'block', fontWeight: 600 }}>COLOR</span>
+                  <span style={{ color: '#888', fontSize: 10, display: 'block', fontWeight: 600 }}>MÀU SẮC</span>
                   <strong>{product.color || 'N/A'}</strong>
                 </div>
                 <div style={{ padding: '8px 10px', borderRight: '1px solid var(--black)', background: '#fafafa' }}>
-                  <span style={{ color: '#888', fontSize: 10, display: 'block', fontWeight: 600 }}>CONDITION</span>
+                  <span style={{ color: '#888', fontSize: 10, display: 'block', fontWeight: 600 }}>TÌNH TRẠNG</span>
                   <strong>{product.condition || 'N/A'}</strong>
                 </div>
                 <div style={{ padding: '8px 10px', background: '#fafafa' }}>

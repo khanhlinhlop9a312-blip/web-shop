@@ -1,12 +1,12 @@
 import { useState } from 'react';
 
 const faqs = [
-  { q: 'How does selling work?', a: "Fill out the Register Product form on our Sell page with photos and details. Our team reviews your submission and contacts you within 48 hours with next steps. We handle listing and sales on your behalf." },
-  { q: 'How do I buy an item?', a: "Browse our categories, click on an item you love, and hit BUY NOW. You'll be guided through checkout. We accept major payment methods and your purchase is protected." },
-  { q: 'Can I return an item?', a: 'We accept returns within 7 days if the item significantly differs from its listed condition. Please contact us with photos and your order number to initiate a return.' },
-  { q: 'How do I know the condition of an item?', a: 'Every item is graded by our team: Like New (barely worn), Very Good (light use), or Good (visible wear with character). We include close-up photos of any notable wear.' },
-  { q: 'How does shipping work?', a: "We ship within 3–5 business days after purchase. You'll receive a tracking number by email. Shipping costs are calculated at checkout based on your location." },
-  { q: 'What categories do you accept for resale?', a: 'We accept clothes, shoes, bags, and accessories in Good condition or better. All items must be clean and ready to wear.' },
+  { q: 'Quy trình gửi bán đồ diễn ra như thế nào?', a: "Bạn chỉ cần điền biểu mẫu Đăng ký sản phẩm trên trang Bán đồ kèm ảnh chụp và mô tả. Đội ngũ của chúng mình sẽ kiểm duyệt và liên hệ lại với bạn trong vòng 48 giờ để hướng dẫn các bước tiếp theo. Chúng mình sẽ hỗ trợ bạn đăng bán và tìm chủ nhân mới cho món đồ." },
+  { q: 'Làm thế nào để mua một món đồ?', a: "Duyệt qua các danh mục, chọn món đồ ưng ý và bấm BUY NOW. Bạn sẽ được lựa chọn 1 trong 3 hình thức thuận tiện: Điền link Google Form, Đặt qua Facebook hoặc Đặt qua Instagram." },
+  { q: 'Chính sách đổi trả hàng như thế nào?', a: 'Chúng mình hỗ trợ đổi trả trong vòng 7 ngày nếu sản phẩm có lỗi rách hoặc khác biệt đáng kể so với tình trạng được mô tả. Vui lòng nhắn tin kèm ảnh chụp và mã đơn hàng để được hỗ trợ nhanh nhất.' },
+  { q: 'Làm sao để biết chính xác tình trạng món đồ?', a: 'Mỗi món đồ đều được kiểm tra kỹ lưỡng và phân loại rõ ràng: Like New (gần như mới), Very Good (rất tốt, ít sử dụng), hoặc Good (tình trạng tốt, có dấu ấn thời gian tự nhiên). Chúng mình luôn cung cấp hình ảnh thực tế và mô tả chi tiết nhất.' },
+  { q: 'Thời gian và phí vận chuyển ra sao?', a: "Đơn hàng sẽ được chuẩn bị và gửi đi trong vòng 2–4 ngày làm việc. Bạn sẽ nhận được mã vận đơn để theo dõi đơn hàng dễ dàng. Phí vận chuyển được tính dựa trên địa chỉ nhận hàng của bạn." },
+  { q: 'GEKKO GECKO nhận thu mua / ký gửi những loại đồ nào?', a: 'Chúng mình nhận quần áo, giày dép, túi xách và phụ kiện thời trang ở tình trạng Tốt trở lên. Tất cả các món đồ cần được giặt sạch và sẵn sàng sử dụng.' },
 ];
 
 export default function FAQ() {

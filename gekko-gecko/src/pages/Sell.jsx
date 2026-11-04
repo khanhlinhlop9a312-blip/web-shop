@@ -11,14 +11,14 @@ export default function Sell() {
 
   const validate = () => {
     const e = {};
-    if (!form.name.trim()) e.name = 'Name is required';
-    if (!form.email.trim()) e.email = 'Email is required';
-    else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email)) e.email = 'Enter a valid email';
-    if (!form.phone.trim()) e.phone = 'Phone number is required';
-    else if (!/^\+?[\d\s\-()]{7,}$/.test(form.phone)) e.phone = 'Enter a valid phone number';
-    if (!form.service.trim()) e.service = 'Please select a service';
-    if (!form.description.trim()) e.description = 'Description is required';
-    if (!form.attachment) e.attachment = 'Please attach a photo of the item';
+    if (!form.name.trim()) e.name = 'Vui lòng nhập họ và tên của bạn';
+    if (!form.email.trim()) e.email = 'Vui lòng nhập địa chỉ email';
+    else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email)) e.email = 'Email không hợp lệ';
+    if (!form.phone.trim()) e.phone = 'Vui lòng nhập số điện thoại';
+    else if (!/^\+?[\d\s\-()]{7,}$/.test(form.phone)) e.phone = 'Số điện thoại không hợp lệ';
+    if (!form.service.trim()) e.service = 'Vui lòng chọn loại dịch vụ';
+    if (!form.description.trim()) e.description = 'Vui lòng nhập mô tả chi tiết sản phẩm';
+    if (!form.attachment) e.attachment = 'Vui lòng đính kèm ảnh chụp sản phẩm';
     return e;
   };
 
@@ -94,10 +94,10 @@ export default function Sell() {
               <div style={{ textAlign: 'center', padding: '60px 20px' }}>
                 <div style={{ fontSize: 48, marginBottom: 16 }}>✓</div>
                 <h2 className="font-display" style={{ fontSize: 32, color: 'var(--burgundy)', marginBottom: 12 }}>
-                  SUCCESS!
+                  GỬI THÀNH CÔNG!
                 </h2>
                 <p style={{ fontSize: 14, lineHeight: 1.7, color: '#555' }}>
-                  Your product has been submitted successfully! Our team will review your submission and contact you within 48 hours.
+                  Thông tin sản phẩm của bạn đã được gửi thành công! Đội ngũ của chúng mình sẽ kiểm duyệt và liên hệ lại với bạn trong vòng 48 giờ.
                 </p>
                 <button
                   onClick={() => { setSubmitted(false); setForm(initialForm); }}
@@ -107,23 +107,23 @@ export default function Sell() {
                     letterSpacing: '0.1em', cursor: 'pointer'
                   }}
                 >
-                  SUBMIT ANOTHER
+                  GỬI SẢN PHẨM KHÁC
                 </button>
               </div>
             ) : (
               <>
                 <h2 style={{ fontSize: 22, fontWeight: 800, margin: '0 0 6px', color: 'var(--burgundy)' }}>
-                  Register product
+                  Đăng ký gửi bán đồ
                 </h2>
                 <p style={{ fontSize: 12, color: '#666', lineHeight: 1.6, marginBottom: 24 }}>
-                  Please fill out this form if you have clothes or fashion items that you would like to resell.
+                  Vui lòng điền thông tin bên dưới nếu bạn có quần áo hoặc phụ kiện thời trang muốn gửi bán lại cho shop.
                 </p>
 
                 <form onSubmit={handleSubmit} noValidate>
                   {[
-                    { field: 'name', label: 'Name', type: 'text', placeholder: 'Your full name' },
-                    { field: 'email', label: 'Email address', type: 'email', placeholder: 'you@example.com' },
-                    { field: 'phone', label: 'Phone number', type: 'tel', placeholder: '+84 xxx xxx xxx' },
+                    { field: 'name', label: 'Họ và tên', type: 'text', placeholder: 'Họ và tên của bạn' },
+                    { field: 'email', label: 'Địa chỉ Email', type: 'email', placeholder: 'you@example.com' },
+                    { field: 'phone', label: 'Số điện thoại', type: 'tel', placeholder: '09xx xxx xxx' },
                   ].map(({ field, label, type, placeholder }) => (
                     <div key={field} style={{ marginBottom: 16 }}>
                       <label htmlFor={field} style={labelStyle}>{label.toUpperCase()}</label>
@@ -141,29 +141,29 @@ export default function Sell() {
                   ))}
 
                   <div style={{ marginBottom: 16 }}>
-                    <label htmlFor="service" style={labelStyle}>SERVICE NEEDED</label>
+                    <label htmlFor="service" style={labelStyle}>DỊCH VỤ BẠN CẦN</label>
                     <select
                       id="service"
                       value={form.service}
                       onChange={e => handleChange('service', e.target.value)}
                       style={{ ...inputStyle('service'), cursor: 'pointer' }}
                     >
-                      <option value="">Select a service...</option>
-                      <option value="sell">Sell my items</option>
-                      <option value="donate">Donate items</option>
-                      <option value="consignment">Consignment</option>
-                      <option value="trade">Trade / swap</option>
+                      <option value="">Chọn dịch vụ...</option>
+                      <option value="sell">Bán sản phẩm cho shop</option>
+                      <option value="donate">Quyên góp quần áo</option>
+                      <option value="consignment">Ký gửi bán hộ</option>
+                      <option value="trade">Đổi đồ / Trao đổi</option>
                     </select>
                     {errors.service && <span style={errorStyle}>{errors.service}</span>}
                   </div>
 
                   <div style={{ marginBottom: 16 }}>
-                    <label htmlFor="description" style={labelStyle}>{"PRODUCT'S DESCRIPTION/DETAILS"}</label>
+                    <label htmlFor="description" style={labelStyle}>{"MÔ TẢ CHI TIẾT SẢN PHẨM"}</label>
                     <textarea
                       id="description"
                       value={form.description}
                       onChange={e => handleChange('description', e.target.value)}
-                      placeholder="Describe the item: brand, condition, size, any flaws..."
+                      placeholder="Mô tả món đồ: thương hiệu, tình trạng, size, các vết sờn/lỗi (nếu có)..."
                       rows={3}
                       style={{ ...inputStyle('description'), resize: 'vertical' }}
                     />
@@ -171,7 +171,7 @@ export default function Sell() {
                   </div>
 
                   <div style={{ marginBottom: 24 }}>
-                    <label htmlFor="attachment" style={labelStyle}>ATTACHMENT (REQUIRED)</label>
+                    <label htmlFor="attachment" style={labelStyle}>ẢNH CHỤP SẢN PHẨM (BẮT BUỘC)</label>
                     <input
                       id="attachment"
                       type="file"
@@ -192,7 +192,7 @@ export default function Sell() {
                     onMouseEnter={e => e.currentTarget.style.background = 'var(--burgundy)'}
                     onMouseLeave={e => e.currentTarget.style.background = 'var(--black)'}
                   >
-                    SUBMIT
+                    GỬI THÔNG TIN BÁN ĐỒ
                   </button>
                 </form>
               </>

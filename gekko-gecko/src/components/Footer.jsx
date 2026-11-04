@@ -23,7 +23,7 @@ export default function Footer() {
               </span>
             </Link>
             <p style={{ fontSize: 13, lineHeight: 1.7, color: 'rgba(255,255,255,0.7)', maxWidth: 220 }}>
-              A playful second-hand fashion community. Buy, sell, and style pre-loved pieces.
+              Cộng đồng thời trang second-hand trẻ trung. Mua bán và định hình phong cách cùng những món đồ pre-loved.
             </p>
           </div>
 

@@ -2,6 +2,13 @@ import { useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { products } from '../data/products';
 
+const categoryNamesVN = {
+  clothes: 'QUẦN ÁO',
+  shoes: 'GIÀY DÉP',
+  bags: 'TÚI XÁCH',
+  accessories: 'PHỤ KIỆN'
+};
+
 export default function ProductDetail() {
   const { id } = useParams();
   const navigate = useNavigate();
@@ -13,9 +20,9 @@ export default function ProductDetail() {
   if (!product) {
     return (
       <div style={{ padding: 64, textAlign: 'center' }}>
-        <p className="font-display" style={{ fontSize: 40, color: 'var(--burgundy)' }}>ITEM NOT FOUND</p>
+        <p className="font-display" style={{ fontSize: 40, color: 'var(--burgundy)' }}>KHÔNG TÌM THẤY SẢN PHẨM</p>
         <button onClick={() => navigate(-1)} style={{ padding: '12px 24px', background: 'var(--burgundy)', color: 'var(--white)', border: 'none', cursor: 'pointer', marginTop: 16 }}>
-          GO BACK
+          QUAY LẠI
         </button>
       </div>
     );
@@ -24,12 +31,12 @@ export default function ProductDetail() {
   const related = products.filter(p => p.category === product.category && p.id !== product.id).slice(0, 4);
 
   const details = [
-    { label: 'CONDITION', value: product.condition },
-    { label: 'SIZE', value: product.size },
-    { label: 'MATERIAL', value: product.material },
-    { label: 'COLOR', value: product.color },
-    { label: 'SEASON', value: product.season },
-    { label: 'CATEGORY', value: product.type },
+    { label: 'TÌNH TRẠNG', value: product.condition },
+    { label: 'KÍCH THƯỚC', value: product.size },
+    { label: 'CHẤT LIỆU', value: product.material },
+    { label: 'MÀU SẮC', value: product.color },
+    { label: 'MÙA', value: product.season },
+    { label: 'PHÂN LOẠI', value: product.type },
   ];
 
   return (
@@ -40,7 +47,7 @@ export default function ProductDetail() {
           <button onClick={() => navigate('/')} style={{ background: 'none', border: 'none', cursor: 'pointer', color: 'var(--burgundy)', fontFamily: 'inherit', fontSize: 'inherit', fontWeight: 'inherit', letterSpacing: 'inherit' }}>HOME</button>
           <span style={{ color: '#999' }}>/</span>
           <button onClick={() => navigate(`/${product.category}`)} style={{ background: 'none', border: 'none', cursor: 'pointer', color: 'var(--burgundy)', fontFamily: 'inherit', fontSize: 'inherit', fontWeight: 'inherit', letterSpacing: 'inherit' }}>
-            {product.category.toUpperCase()}
+            {categoryNamesVN[product.category] || product.category.toUpperCase()}
           </button>
           <span style={{ color: '#999' }}>/</span>
           <span style={{ color: '#555' }}>{product.name}</span>
@@ -73,7 +80,7 @@ export default function ProductDetail() {
               background: 'var(--baby-blue)', color: 'var(--burgundy)',
               padding: '4px 10px', display: 'inline-block', marginBottom: 16
             }}>
-              {product.category.toUpperCase()} · {product.type.toUpperCase()}
+              {(categoryNamesVN[product.category] || product.category).toUpperCase()} · {product.type.toUpperCase()}
             </span>
 
             <h1 className="font-display" style={{ fontSize: 'clamp(2rem, 4vw, 3.5rem)', color: 'var(--black)', margin: '0 0 8px', lineHeight: 0.95 }}>
@@ -98,7 +105,7 @@ export default function ProductDetail() {
 
             {/* Quantity */}
             <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 20 }}>
-              <span style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.1em' }}>QTY</span>
+              <span style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.1em' }}>SỐ LƯỢNG</span>
               <div style={{ display: 'flex', border: '1.5px solid var(--black)', overflow: 'hidden' }}>
                 <button
                   onClick={() => setQty(q => Math.max(1, q - 1))}
@@ -143,7 +150,7 @@ export default function ProductDetail() {
                 cursor: 'pointer', transition: 'background 0.2s'
               }}
             >
-              {wishlisted ? '♥ WISHLISTED' : '♡ ADD TO WISHLIST'}
+              {wishlisted ? '♥ ĐÃ THÊM YÊU THÍCH' : '♡ THÊM VÀO YÊU THÍCH'}
             </button>
           </div>
         </div>
@@ -152,7 +159,7 @@ export default function ProductDetail() {
         {related.length > 0 && (
           <div style={{ marginTop: 72 }}>
             <h2 className="font-display" style={{ fontSize: 'clamp(2rem, 4vw, 3.5rem)', color: 'var(--burgundy)', margin: '0 0 24px' }}>
-              MORE {product.category.toUpperCase()}
+              CÁC MÓN {categoryNamesVN[product.category] || product.category.toUpperCase()} KHÁC
             </h2>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))', gap: 16 }}>
               {related.map(p => (
