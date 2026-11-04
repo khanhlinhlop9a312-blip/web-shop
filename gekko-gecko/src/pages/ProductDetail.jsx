@@ -9,7 +9,6 @@ export default function ProductDetail() {
 
   const [qty, setQty] = useState(1);
   const [wishlisted, setWishlisted] = useState(false);
-  const [bought, setBought] = useState(false);
 
   if (!product) {
     return (
@@ -120,29 +119,18 @@ export default function ProductDetail() {
             </div>
 
             {/* Buttons */}
-            {bought ? (
-              <div style={{
-                background: 'var(--baby-blue)', border: '1.5px solid var(--burgundy)',
-                padding: '16px 24px', textAlign: 'center', marginBottom: 12
-              }}>
-                <p className="font-display" style={{ margin: 0, fontSize: 20, color: 'var(--burgundy)' }}>
-                  ✓ ADDED TO CART!
-                </p>
-              </div>
-            ) : (
-              <button
-                onClick={() => setBought(true)}
-                style={{
-                  width: '100%', padding: '16px', background: 'var(--burgundy)', color: 'var(--white)',
-                  border: 'none', fontSize: 13, fontWeight: 700, letterSpacing: '0.12em',
-                  cursor: 'pointer', marginBottom: 12, transition: 'background 0.2s'
-                }}
-                onMouseEnter={e => e.currentTarget.style.background = '#8a0022'}
-                onMouseLeave={e => e.currentTarget.style.background = 'var(--burgundy)'}
-              >
-                BUY NOW
-              </button>
-            )}
+            <button
+              onClick={() => navigate(`/order/${product.id}?qty=${qty}`)}
+              style={{
+                width: '100%', padding: '16px', background: 'var(--burgundy)', color: 'var(--white)',
+                border: 'none', fontSize: 13, fontWeight: 700, letterSpacing: '0.12em',
+                cursor: 'pointer', marginBottom: 12, transition: 'background 0.2s'
+              }}
+              onMouseEnter={e => e.currentTarget.style.background = '#8a0022'}
+              onMouseLeave={e => e.currentTarget.style.background = 'var(--burgundy)'}
+            >
+              BUY NOW
+            </button>
 
             <button
               onClick={() => setWishlisted(w => !w)}

@@ -9,13 +9,6 @@ const categories = [
   { name: 'ACCESSORIES', path: '/accessories', img: 'https://images.unsplash.com/photo-1603561591411-07134e71a2a9?w=200&q=80' },
 ];
 
-const communityPosts = [
-  { image: 'https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=400&q=80', title: 'Style Guide: 5 Ways to Wear Thrifted Denim', tag: 'STYLING' },
-  { image: 'https://images.unsplash.com/photo-1445205170230-053b83016050?w=400&q=80', title: 'Why Second-Hand Shopping is the Future', tag: 'SUSTAINABILITY' },
-  { image: 'https://images.unsplash.com/photo-1487222477894-8943e31ef7b2?w=400&q=80', title: 'Community Spotlight: @gekko.girls', tag: 'COMMUNITY' },
-  { image: 'https://images.unsplash.com/photo-1525507119028-ed4c629a60a3?w=400&q=80', title: "Rare Finds This Week — Don't Miss Out!", tag: 'PICKS' },
-];
-
 export default function Home() {
   const navigate = useNavigate();
 
@@ -339,46 +332,186 @@ export default function Home() {
       {/* SOCIAL MEDIA */}
       <SocialMediaSection />
 
-      {/* COMMUNITY */}
-      <section id="community" style={{ background: 'var(--white)', padding: '80px 32px', borderBottom: '3px solid var(--burgundy)' }}>
+      {/* COMMUNITY / BRAND STORY */}
+      <section id="community" style={{ background: 'var(--white)', padding: '88px 32px', borderBottom: '3px solid var(--burgundy)' }}>
         <div style={{ maxWidth: 1200, margin: '0 auto' }}>
-          <div style={{ display: 'flex', alignItems: 'flex-end', justifyContent: 'space-between', marginBottom: 40, flexWrap: 'wrap', gap: 16 }}>
-            <h2 className="font-display" style={{ fontSize: 'clamp(2.5rem, 5vw, 5rem)', color: 'var(--burgundy)', margin: 0, lineHeight: 0.95, letterSpacing: '0.01em' }}>
-              COMMUNITY
-            </h2>
-            <span style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.1em', color: 'var(--burgundy)', borderBottom: '2px solid var(--burgundy)', paddingBottom: 2 }}>
-              VIEW ALL →
-            </span>
-          </div>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: 20 }}>
-            {communityPosts.map((post, i) => (
-              <div
-                key={i}
-                style={{ border: '1.5px solid var(--black)', overflow: 'hidden', cursor: 'pointer' }}
-                onMouseEnter={e => e.currentTarget.style.borderColor = 'var(--burgundy)'}
-                onMouseLeave={e => e.currentTarget.style.borderColor = 'var(--black)'}
-              >
-                <div style={{ height: 200, overflow: 'hidden' }}>
-                  <img
-                    src={post.image}
-                    alt={post.title}
-                    style={{ width: '100%', height: '100%', objectFit: 'cover', transition: 'transform 0.3s' }}
-                    onMouseEnter={e => e.target.style.transform = 'scale(1.05)'}
-                    onMouseLeave={e => e.target.style.transform = 'scale(1)'}
-                  />
-                </div>
-                <div style={{ padding: '14px 16px' }}>
-                  <span style={{
-                    fontSize: 9, fontWeight: 700, letterSpacing: '0.15em',
-                    background: 'var(--baby-blue)', color: 'var(--burgundy)', padding: '3px 8px',
-                    display: 'inline-block', marginBottom: 8
-                  }}>
-                    {post.tag}
-                  </span>
-                  <p style={{ fontSize: 13, fontWeight: 700, margin: 0, lineHeight: 1.4 }}>{post.title}</p>
-                </div>
+          <div className="community-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1.15fr', gap: 56, alignItems: 'center' }}>
+            
+            {/* Image side */}
+            <div style={{
+              border: '2px solid var(--black)',
+              boxShadow: '10px 10px 0 var(--burgundy)',
+              overflow: 'hidden',
+              background: 'var(--pale-pink)',
+              position: 'relative',
+              height: '100%',
+              minHeight: 480,
+              maxHeight: 640
+            }}>
+              <img
+                src="/brand-story.jpg"
+                alt="Gekko Gecko - Find The Hip-Hop In You"
+                style={{
+                  width: '100%',
+                  height: '100%',
+                  objectFit: 'cover',
+                  objectPosition: 'center 20%',
+                  display: 'block',
+                  transition: 'transform 0.4s ease'
+                }}
+                onMouseEnter={e => e.target.style.transform = 'scale(1.03)'}
+                onMouseLeave={e => e.target.style.transform = 'scale(1)'}
+              />
+              <div style={{
+                position: 'absolute',
+                top: 18,
+                left: 18,
+                background: 'var(--burgundy)',
+                color: 'var(--white)',
+                padding: '6px 14px',
+                fontSize: 11,
+                fontWeight: 700,
+                letterSpacing: '0.12em'
+              }}>
+                FIND THE HIP-HOP IN YOU
               </div>
-            ))}
+              <div style={{
+                position: 'absolute',
+                bottom: 18,
+                right: 18,
+                background: 'rgba(0,0,0,0.75)',
+                color: 'var(--white)',
+                padding: '6px 12px',
+                fontSize: 10,
+                fontWeight: 600,
+                letterSpacing: '0.1em',
+                backdropFilter: 'blur(4px)'
+              }}>
+                @GEKKOGECKO.THRIFT
+              </div>
+            </div>
+
+            {/* Story text side */}
+            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
+              <span style={{
+                fontSize: 10,
+                fontWeight: 700,
+                letterSpacing: '0.2em',
+                background: 'var(--baby-blue)',
+                color: 'var(--burgundy)',
+                padding: '4px 10px',
+                display: 'inline-block',
+                marginBottom: 16
+              }}>
+                COMMUNITY · BRAND STORY
+              </span>
+
+              <h2 className="font-display" style={{
+                fontSize: 'clamp(2.1rem, 3.8vw, 3.4rem)',
+                color: 'var(--burgundy)',
+                margin: '0 0 16px',
+                lineHeight: 1.05,
+                letterSpacing: '0.01em'
+              }}>
+                🦎 GEKKO GECKO <br />
+                <span style={{ color: 'var(--black)' }}>FIND THE HIP-HOP IN YOU</span>
+              </h2>
+
+              <p style={{
+                fontSize: 'clamp(15px, 1.25vw, 17px)',
+                fontWeight: 700,
+                lineHeight: 1.6,
+                color: 'var(--burgundy)',
+                margin: '0 0 16px'
+              }}>
+                Đã đến lúc bạn bước ra khỏi những màu sắc quen thuộc mà mình vẫn khoác lên mỗi ngày.
+              </p>
+
+              <p style={{ fontSize: 14, lineHeight: 1.8, color: '#333', margin: '0 0 14px' }}>
+                Bạn đã quá quen với hình ảnh bản thân hiện tại? Bạn muốn thử một điều gì đó mới mẻ, táo bạo hơn, nhưng chưa biết bắt đầu từ đâu?
+              </p>
+
+              <div style={{
+                borderLeft: '3px solid var(--burgundy)',
+                paddingLeft: 16,
+                margin: '14px 0 18px',
+                fontStyle: 'italic',
+                color: 'var(--black)',
+                fontWeight: 700,
+                fontSize: 15
+              }}>
+                “Nếu như bạn có thể là 1 ‘bản thân’ khác”
+              </div>
+
+              <p style={{ fontSize: 14, lineHeight: 1.8, color: '#444', margin: '0 0 12px' }}>
+                Gekko Gecko mang đến campaign định hướng phong cách Hip-hop - nơi bạn được khám phá những cách phối đồ mới, thử nghiệm với streetwear và tự do thể hiện cá tính qua từng outfit.
+              </p>
+
+              <p style={{ fontSize: 14, lineHeight: 1.8, color: '#444', margin: '0 0 12px' }}>
+                Không cần phải trở thành một ai khác. Chỉ cần cho bản thân cơ hội trải nghiệm những điều trước đây bạn chưa từng thử.
+              </p>
+
+              <p style={{ fontSize: 14, lineHeight: 1.8, color: '#444', margin: '0 0 20px' }}>
+                Bởi đôi khi, bước đầu tiên để bứt phá chính là dám thay đổi cách bạn nhìn nhận và thể hiện chính mình.
+              </p>
+
+              <div style={{
+                background: 'var(--pale-pink)',
+                border: '1.5px solid var(--burgundy)',
+                padding: '12px 18px',
+                marginBottom: 24,
+                display: 'inline-block'
+              }}>
+                <p className="font-display" style={{
+                  margin: 0,
+                  fontSize: 'clamp(14px, 1.2vw, 17px)',
+                  color: 'var(--burgundy)',
+                  letterSpacing: '0.04em'
+                }}>
+                  PHÁ VỠ KHUÔN KHỔ. KHOÁC LÊN MÀU SẮC CỦA CHÍNH MÌNH.
+                </p>
+              </div>
+
+              <div style={{ display: 'flex', gap: 14, flexWrap: 'wrap' }}>
+                <button
+                  onClick={() => navigate('/clothes')}
+                  style={{
+                    background: 'var(--burgundy)',
+                    color: 'var(--white)',
+                    border: 'none',
+                    padding: '13px 28px',
+                    fontSize: 12,
+                    fontWeight: 700,
+                    letterSpacing: '0.12em',
+                    cursor: 'pointer',
+                    transition: 'background 0.2s'
+                  }}
+                  onMouseEnter={e => e.currentTarget.style.background = '#8a0022'}
+                  onMouseLeave={e => e.currentTarget.style.background = 'var(--burgundy)'}
+                >
+                  EXPLORE STREETWEAR →
+                </button>
+                <button
+                  onClick={() => navigate('/sell')}
+                  style={{
+                    background: 'transparent',
+                    color: 'var(--burgundy)',
+                    border: '1.5px solid var(--burgundy)',
+                    padding: '13px 24px',
+                    fontSize: 12,
+                    fontWeight: 700,
+                    letterSpacing: '0.12em',
+                    cursor: 'pointer',
+                    transition: 'all 0.2s'
+                  }}
+                  onMouseEnter={e => e.currentTarget.style.background = 'var(--pale-pink)'}
+                  onMouseLeave={e => e.currentTarget.style.background = 'transparent'}
+                >
+                  SELL YOUR PIECES
+                </button>
+              </div>
+            </div>
+
           </div>
         </div>
       </section>
