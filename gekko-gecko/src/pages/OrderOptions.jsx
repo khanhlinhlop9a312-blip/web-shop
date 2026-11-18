@@ -46,8 +46,14 @@ export default function OrderOptions() {
   }
 
   const totalPrice = product.price * qty;
+  const formattedProductPrice = typeof product.price === 'number' && product.price >= 1000
+    ? `${product.price.toLocaleString('vi-VN')}đ`
+    : `$${product.price}`;
+  const formattedTotalPrice = typeof totalPrice === 'number' && totalPrice >= 1000
+    ? `${totalPrice.toLocaleString('vi-VN')}đ`
+    : `$${totalPrice}`;
 
-  const orderSummaryText = `[GEKKO GECKO] Đặt hàng: ${product.name} | Size: ${product.size || 'N/A'} | Màu: ${product.color || 'N/A'} | SL: ${qty} | Tổng tiền: $${totalPrice}`;
+  const orderSummaryText = `[GEKKO GECKO] Đặt hàng: ${product.name} | Size: ${product.size || 'N/A'} | Màu: ${product.color || 'N/A'} | SL: ${qty} | Tổng tiền: ${formattedTotalPrice}`;
 
   const handleCopyInfo = () => {
     navigator.clipboard.writeText(orderSummaryText).then(() => {
@@ -428,7 +434,7 @@ export default function OrderOptions() {
                     {(categoryNamesVN[product.category] || product.category).toUpperCase()} · {product.type}
                   </p>
                   <p style={{ fontSize: 18, fontWeight: 800, color: 'var(--burgundy)', margin: 0, fontFamily: 'Anton, sans-serif' }}>
-                    ${product.price}
+                    {formattedProductPrice}
                   </p>
                 </div>
               </div>
@@ -471,7 +477,7 @@ export default function OrderOptions() {
               }}>
                 <span style={{ fontSize: 13, fontWeight: 700, color: 'var(--black)' }}>TỔNG TẠM TÍNH:</span>
                 <span className="font-display" style={{ fontSize: 26, color: 'var(--burgundy)' }}>
-                  ${totalPrice}
+                  {formattedTotalPrice}
                 </span>
               </div>
 

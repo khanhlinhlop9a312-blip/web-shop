@@ -31,7 +31,9 @@ export default function ProductCard({ product }) {
             {product.name}
           </h3>
           <span style={{ fontSize: 14, fontWeight: 700, color: 'var(--burgundy)', whiteSpace: 'nowrap' }}>
-            ${product.price}
+            {typeof product.price === 'number' && product.price >= 1000
+              ? `${product.price.toLocaleString('vi-VN')}đ`
+              : `$${product.price}`}
           </span>
         </div>
         <p style={{ fontSize: 11, color: '#666', margin: '4px 0', letterSpacing: '0.05em' }}>

@@ -88,7 +88,9 @@ export default function ProductDetail() {
             </h1>
 
             <p style={{ fontSize: 'clamp(1.5rem, 3vw, 2.5rem)', fontWeight: 800, color: 'var(--burgundy)', margin: '0 0 24px', fontFamily: 'Anton, sans-serif' }}>
-              ${product.price}
+              {typeof product.price === 'number' && product.price >= 1000
+                ? `${product.price.toLocaleString('vi-VN')}đ`
+                : `$${product.price}`}
             </p>
 
             {/* Details grid */}
@@ -181,7 +183,11 @@ export default function ProductDetail() {
                   </div>
                   <div style={{ padding: '10px 12px' }}>
                     <p style={{ fontSize: 12, fontWeight: 700, margin: '0 0 2px' }}>{p.name}</p>
-                    <p style={{ fontSize: 13, fontWeight: 700, color: 'var(--burgundy)', margin: 0 }}>${p.price}</p>
+                    <p style={{ fontSize: 13, fontWeight: 700, color: 'var(--burgundy)', margin: 0 }}>
+                      {typeof p.price === 'number' && p.price >= 1000
+                        ? `${p.price.toLocaleString('vi-VN')}đ`
+                        : `$${p.price}`}
+                    </p>
                   </div>
                 </div>
               ))}
